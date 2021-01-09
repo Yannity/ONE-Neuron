@@ -23,7 +23,7 @@ weight2 = random.uniform(-1,1)
 bias = random.uniform(-1,1)
 
 Total = 0
-Loop = 1
+Loop = 0
 errorFreeRunLength = 0
 
 print('')
@@ -63,7 +63,7 @@ while errorFreeRunLength < len(input_output_matrix):
     biasnew = (bias  + ( 1 *  LR) * error)
     bias = biasnew
 
-    print('Loop: ', Loop)
+    print('Loop: ', Loop + 1)
     Loop += 1
     print('Total',Total)
     print('Correct', Correct)
