@@ -80,14 +80,14 @@ while errorFreeRunLength < len(input_output_matrix):
       Correct = 0
       Total -= 1
 # Applying The Whip (Changing The Weights)
-    weight1new = (weight1  + (input1 * LR) * error)
-    weight1 = weight1new
+      weight1new = (weight1  + (input1 * LR) * error)
+      weight1 = weight1new
 
-    weight2new = (weight2  + (input2 * LR) * error)
-    weight2 = weight2new
+      weight2new = (weight2  + (input2 * LR) * error)
+      weight2 = weight2new
 
-    biasnew = (bias  + ( 1 *  LR) * error)
-    bias = biasnew
+      biasnew = (bias  + ( 1 *  LR) * error)
+      bias = biasnew
 
     print('Loop: ', Loop + 1)
     Loop += 1
