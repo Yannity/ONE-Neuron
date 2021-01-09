@@ -28,7 +28,7 @@ print('Program Name: ONE Neuron')
 print('Start')
 print('')
 
-while errorFreeRunLength is not 20:
+while errorFreeRunLength < len(outputlist):
 
     count = Loop%len(outputlist)
     input1 = input1list[count]
