@@ -1,11 +1,14 @@
 import random
 
 #SetUp
-ORlist = [0,1,1,1]
-#ANDlist = [0,0,0,1]
 input1list = [0,1,0,1]
 input2list = [0,0,1,1]
-#startlist = [0,0,0.7]
+
+# generate the 3 Gates output from the two input lists
+ORlist  = [a|b for a,b in zip(input1list, input2list)]
+ANDlist = [a&b for a,b in zip(input1list, input2list)]
+XORlist = [a^b for a,b in zip(input1list, input2list)]
+
 LR = 0.7
 weight1 = 0
 weight1new = 0
