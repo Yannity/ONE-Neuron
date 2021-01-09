@@ -33,6 +33,8 @@ name, outputlist = choices[user_choice]
 input_output_matrix = list(zip(input1list, input2list, outputlist))
 
 # We Display the input_output Matrix for the User
+print(f'\nYou\'ve Choosen {name} Gate')
+print('\nTruth Table:')
 print(f'A\tB\t{name.split(" ")[1]}')
 for a, b, o in input_output_matrix:
   print(f'{a}\t{b}\t{o}')
@@ -105,6 +107,7 @@ while errorFreeRunLength < len(input_output_matrix):
 
     if Loop >= max_epoch:
       print(f'Max Epoch of {max_epoch} epochs reached')
+      print('Neuron Youldn\'t Finish its Training D:')
       break
 
 print('The End')
