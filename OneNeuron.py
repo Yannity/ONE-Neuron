@@ -31,7 +31,7 @@ print('Start')
 print('')
 
 while errorFreeRunLength is not 20:
-    
+
     count = random.randint(0,3)
     input1 = input1list[count]
     input2 = input2list[count]
@@ -42,7 +42,7 @@ while errorFreeRunLength is not 20:
 # The TEST
     if NeuronResult < 0:
       Output = 0
-    else: 
+    else:
       Output = 1
     error = Wanted - Output
 # LOOP Control
@@ -53,7 +53,7 @@ while errorFreeRunLength is not 20:
     else:
       errorFreeRunLength = 0
       Correct = 0
-      Total = (Total - 1) 
+      Total = (Total - 1)
 # Applying The Whip (Changing The Weights)
     weight1new = (weight1  + (input1 * LR) * error)
     weight1 = weight1new
