@@ -30,7 +30,7 @@ print('')
 
 while errorFreeRunLength is not 20:
 
-    count = random.randint(0,3)
+    count = Loop%len(outputlist)
     input1 = input1list[count]
     input2 = input2list[count]
     Wanted = outputlist[count]
