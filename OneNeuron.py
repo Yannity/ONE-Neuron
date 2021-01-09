@@ -11,18 +11,8 @@ XORlist = [a^b for a,b in zip(input1list, input2list)]
 
 LR = 0.7
 weight1 = 0
-weight1new = 0
 weight2 = 0
-weight2new = 0
 bias = 0.7
-biasnew = 0
-error =0
-count = random.randint(0,3)
-input1 = input1list[count]
-input2 = input2list[count]
-Wanted = ORlist[count]
-Output = 0
-Correct = 0
 Total = 0
 Loop = 1
 
