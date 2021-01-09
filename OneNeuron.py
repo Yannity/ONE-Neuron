@@ -9,6 +9,8 @@ ORlist  = [a|b for a,b in zip(input1list, input2list)]
 ANDlist = [a&b for a,b in zip(input1list, input2list)]
 XORlist = [a^b for a,b in zip(input1list, input2list)]
 
+outputlist = ORlist
+
 LR = 0.7
 
 # Setup random weights and bias
@@ -31,7 +33,7 @@ while errorFreeRunLength is not 20:
     count = random.randint(0,3)
     input1 = input1list[count]
     input2 = input2list[count]
-    Wanted = ORlist[count]
+    Wanted = outputlist[count]
 
 #Neuron Result (Kernal Of Learning)
     NeuronResult = ((input1 * weight1)+(input2 * weight2) + bias)
