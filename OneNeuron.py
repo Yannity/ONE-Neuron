@@ -13,7 +13,9 @@ outputlist = ORlist
 
 input_output_matrix = list(zip(input1list, input2list, outputlist))
 
-LR = 0.7
+# Setup the HyperParameters
+max_epoch = 500 # to avoid infinite loop
+LR = 0.7 # learning rate
 
 # Setup random weights and bias
 weight1 = random.uniform(-1,1)
@@ -74,5 +76,9 @@ while errorFreeRunLength < len(input_output_matrix):
     print(weight2)
     print(bias)
     print('')
+
+    if Loop >= max_epoch:
+      print(f'Max Epoch of {max_epoch} epochs reached')
+      break
 
 print('The End')
