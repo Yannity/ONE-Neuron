@@ -11,6 +11,8 @@ XORlist = [a^b for a,b in zip(input1list, input2list)]
 
 outputlist = ORlist
 
+input_output_matrix = list(zip(input1list, input2list, outputlist))
+
 LR = 0.7
 
 # Setup random weights and bias
@@ -20,7 +22,6 @@ bias = random.uniform(-1,1)
 
 Total = 0
 Loop = 1
-
 errorFreeRunLength = 0
 
 print('')
@@ -28,12 +29,10 @@ print('Program Name: ONE Neuron')
 print('Start')
 print('')
 
-while errorFreeRunLength < len(outputlist):
+while errorFreeRunLength < len(input_output_matrix):
 
-    count = Loop%len(outputlist)
-    input1 = input1list[count]
-    input2 = input2list[count]
-    Wanted = outputlist[count]
+    count = Loop%len(input_output_matrix)
+    input1, input2, Wanted = input_output_matrix[count]
 
 #Neuron Result (Kernal Of Learning)
     NeuronResult = ((input1 * weight1)+(input2 * weight2) + bias)
@@ -45,13 +44,13 @@ while errorFreeRunLength < len(outputlist):
     error = Wanted - Output
 # LOOP Control
     if Output is Wanted:
-      errorFreeRunLength = (errorFreeRunLength + 1)
+      errorFreeRunLength += 1
       Correct = 1
-      Total = (Total + 1)
+      Total += 1
     else:
       errorFreeRunLength = 0
       Correct = 0
-      Total = (Total - 1)
+      Total -= 1
 # Applying The Whip (Changing The Weights)
     weight1new = (weight1  + (input1 * LR) * error)
     weight1 = weight1new
@@ -63,7 +62,7 @@ while errorFreeRunLength < len(outputlist):
     bias = biasnew
 
     print('Loop: ', Loop)
-    Loop = (Loop + 1)
+    Loop += 1
     print('Total',Total)
     print('Correct', Correct)
     print('errorFreeRunLength: ', errorFreeRunLength)
