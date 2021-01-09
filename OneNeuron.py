@@ -10,9 +10,12 @@ ANDlist = [a&b for a,b in zip(input1list, input2list)]
 XORlist = [a^b for a,b in zip(input1list, input2list)]
 
 LR = 0.7
-weight1 = 0
-weight2 = 0
-bias = 0.7
+
+# Setup random weights and bias
+weight1 = random.uniform(-1,1)
+weight2 = random.uniform(-1,1)
+bias = random.uniform(-1,1)
+
 Total = 0
 Loop = 1
 
