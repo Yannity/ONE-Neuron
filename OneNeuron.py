@@ -9,9 +9,35 @@ ORlist  = [a|b for a,b in zip(input1list, input2list)]
 ANDlist = [a&b for a,b in zip(input1list, input2list)]
 XORlist = [a^b for a,b in zip(input1list, input2list)]
 
-outputlist = ORlist
+# make it a list of choice for the CLI
+choices = [
+  ['an OR',  ORlist],
+  ['an AND', ANDlist],
+  ['a XOR', XORlist],
+]
+
+# Start of Rudimentary CLI User Interface
+happy = False
+while not happy:
+    print('Which Gate do You Want to Train?')
+    for i, (name,*_) in enumerate(choices):
+        print(f'  Enter {i+1} For {name} Gate')
+    try:
+        user_choice = int(input('\n> ')) - 1
+        happy = 0 <= user_choice < len(choices)
+    except ValueError:
+        print(f'Please Enter a Valid Number Between 1 and {len(choices)+1}')
+
+name, outputlist = choices[user_choice]
 
 input_output_matrix = list(zip(input1list, input2list, outputlist))
+
+# We Display the input_output Matrix for the User
+print(f'A\tB\t{name.split(" ")[1]}')
+for a, b, o in input_output_matrix:
+  print(f'{a}\t{b}\t{o}')
+
+input('\nPress Enter to Start Training your Neuron!')
 
 # Setup the HyperParameters
 max_epoch = 500 # to avoid infinite loop
